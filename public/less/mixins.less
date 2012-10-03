@@ -1,0 +1,20 @@
+.gradient-left-right(@from, @to) {
+	background-image: linear-gradient(left , @from 31%, @to 66%);
+	background-image: -o-linear-gradient(left , @from 31%, @to 66%);
+	background-image: -moz-linear-gradient(left , @from 31%, @to 66%);
+	background-image: -webkit-linear-gradient(left , @from 31%, @to 66%);
+	background-image: -ms-linear-gradient(left , @from 31%, @to 66%);
+	background-image: -webkit-gradient(linear, left top, right top,	color-stop(0.31, @from), color-stop(0.66, @to));
+}
+
+.gradient-top-bottom(@top, @bottom) {
+	@from: @bottom;
+	@to: @top;
+	background-image: linear-gradient(bottom , @from 31%, @to 66%);
+	background-image: -o-linear-gradient(bottom , @from 31%, @to 66%);
+	background-image: -moz-linear-gradient(bottom , @from 31%, @to 66%);
+	background-image: -webkit-linear-gradient(bottom , @from 31%, @to 66%);
+	background-image: -ms-linear-gradient(bottom , @from 31%, @to 66%);
+	background-image: -webkit-gradient(linear, right bottom, right top,	color-stop(0.31, @from), color-stop(0.66, @to));
+	-ms-filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr=@from, endColorstr=@to)";   
+}

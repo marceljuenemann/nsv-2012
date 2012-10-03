@@ -1,42 +1,73 @@
 <?php echo $this->doctype(); ?>
-
-<html lang="en">
+<html lang="de">
     <head>
         <meta charset="utf-8">
-        <?php echo $this->headTitle('ZF2 '. $this->translate('Skeleton Application'))->setSeparator(' - ')->setAutoEscape(false) ?>
+        <?php echo $this->headTitle($this->translate('title'))->setSeparator(' - ')->setAutoEscape(false) ?>
 
         <?php echo $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0') ?>
 
-        <!-- Le styles -->
-        <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/images/favicon.ico'))
-                        ->prependStylesheet($this->basePath() . '/css/bootstrap-responsive.min.css')
-                        ->prependStylesheet($this->basePath() . '/css/style.css')
-                        ->prependStylesheet($this->basePath() . '/css/bootstrap.min.css') ?>
+        <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/images/favicon.ico')) ?>
 
-        <!-- Scripts -->
-        <?php echo $this->headScript()->prependFile($this->basePath() . '/js/html5.js', 'text/javascript', array('conditional' => 'lt IE 9',))
-                                      ->prependFile($this->basePath() . '/js/jquery-1.7.2.min.js') ?>
-    </head>
+        <link rel="stylesheet/less" type="text/css" href="<?php echo $this->basePath('bootstrap-src/less/bootstrap.less'); ?>" >
+        <link rel="stylesheet/less" type="text/css" href="<?php echo $this->basePath('less/nsv/style.less'); ?>" >
+                
+        <?php echo $this->headScript()->appendFile($this->basePath() . '/js/jquery-1.7.2.min.js')
+                                      ->appendFile($this->basePath() . '/js/less-1.3.0.min.js')
+                                      ->appendFile($this->basePath() . '/js/nsv.js')
+                                      ->appendFile($this->basePath() . '/js/html5.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+        ?>
+                                      
+        </head>
     <body>
-        <div class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </a>
-                    <a class="brand" href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Skeleton Application') ?></a>
-                    <div class="nav-collapse">
-                        <ul class="nav">
-                            <li class="active"><a href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Home') ?></a></li>
-                        </ul>
-                    </div><!--/.nav-collapse -->
+        <header>
+            <div class="container">
+                <div class="row">
+                    <div class="span2">
+                        <a id="logo" href="#"><img src="<?php echo $this->basePath() . '/images/nsv-logo.png' ?>" alt="NSV Logo" width="95px" ></a>
+                    </div>
+                    <div class="span10">
+                        <h1>Nieders&auml;chsischer Schachverband</h1>
+                    </div>
+                </div>
+            </div>    
+        </header>
+
+        <nav>
+            <div class="container">
+                <div class="navbar">
+                    <form class="form-search form-inline" action="search/">
+                        <input type="text" class="input-small search-query" placeholder="Suchen">
+                    </form> 
+                    <ul>
+                        <li><a href="#">Referate</a></li>
+                        <li><a href="#">Referate</a></li>
+                        <li><a href="#">Referate</a></li>
+                        <li><a href="#">Referate</a></li>
+                        <li><a href="#">Referate</a></li>
+                        <li><a href="#">Referate</a></li>
+                        <li><a href="#">Referate</a></li>
+                    </ul>
                 </div>
             </div>
-        </div>
+            <div class="expansion"></div>
+        </nav>
+
+
+        
+     
         <div class="container">
             <?php echo $this->content; ?>
+            
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sollicitudin lacus in arcu placerat in tincidunt nunc ornare. Vivamus posuere lobortis tortor, at pharetra magna accumsan nec. Maecenas dapibus varius risus, a commodo neque gravida sit amet. Aenean fermentum ligula quis odio consequat tempus. Vivamus mollis metus ut nunc rutrum ac lobortis risus tincidunt. Aenean scelerisque adipiscing dignissim. Donec in malesuada mi. Proin semper aliquam sapien, in feugiat quam volutpat nec. Cras id ipsum orci. Aliquam sem libero, ullamcorper id rutrum at, porttitor vitae arcu. Nunc nec est libero, a auctor magna. Praesent a mollis mi. Integer vel ante risus.
+
+Aenean tristique, enim ac lobortis dapibus, quam dui ullamcorper orci, dapibus tincidunt lacus mi vel nisl. Mauris varius turpis tincidunt ligula pulvinar convallis sit amet quis diam. Aliquam blandit commodo sapien tincidunt congue. Ut nisi odio, tincidunt sit amet tristique sit amet, viverra sit amet erat. Aliquam erat volutpat. Nam eget elit ac lacus mollis fermentum et et nibh. In egestas, felis at posuere viverra, lacus sem ultrices eros, a consequat magna nisl eu massa. Aliquam vel elit nulla. Nam bibendum tempus sodales. Donec tincidunt erat dui, at convallis dolor.
+
+Aliquam accumsan egestas ante, et semper leo cursus at. Donec elementum felis at sapien porttitor pellentesque. Nam volutpat, nisl nec vehicula lobortis, mi nisi dignissim mauris, non dictum nibh eros ac metus. Praesent vestibulum aliquet vulputate. Integer mi diam, feugiat non posuere a, molestie et nunc. Praesent id diam at magna facilisis sollicitudin nec vitae augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce iaculis egestas mauris, nec volutpat urna lacinia nec. Aliquam libero eros, semper ac rhoncus in, tristique eu ligula. Aliquam sit amet massa et massa blandit molestie eget et quam. Maecenas id dui sit amet leo ultricies gravida quis nec odio. Vivamus elementum arcu eu odio consectetur gravida. Proin elementum laoreet ipsum at molestie. Curabitur nec rutrum tortor.
+
+Quisque eget quam sit amet purus ultrices rutrum. Integer nibh ipsum, vestibulum quis feugiat a, vulputate at ante. Sed feugiat egestas massa, ac dictum orci faucibus non. Aliquam nulla ligula, bibendum eget venenatis vitae, facilisis sed orci. Mauris venenatis dictum porta. Aliquam pharetra sollicitudin ligula eu ultricies. Nulla ante tortor, bibendum et fermentum at, laoreet sed nibh.
+
+Nulla laoreet, elit id volutpat suscipit, lorem nisi fringilla libero, vitae bibendum augue orci eget augue. Suspendisse arcu massa, pharetra in tincidunt id, vestibulum a diam. Cras lacus tellus, mollis eu vestibulum et, pretium in dolor. Duis tincidunt pretium nisl at faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at mi a massa bibendum tempor. Phasellus sed quam non quam pellentesque mattis. Ut dignissim lacinia nulla, vitae accumsan magna viverra id. Suspendisse ornare leo fringilla arcu pellentesque a ultricies purus sollicitudin.
+
             <hr>
             <footer>
                 <p>&copy; 2005 - 2012 by Zend Technologies Ltd. <?php echo $this->translate('All rights reserved.') ?></p>
