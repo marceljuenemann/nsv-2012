@@ -1,0 +1,243 @@
+@import "../../bootstrap-src/less/variables.less";
+@import "../mixins.less";
+
+@nav-margin-left: 100px;
+@nav-padding-left: 20px;
+@nav-item-width: 93px;
+@nav-height: 30px;
+@nav-pos-top: 75px;
+@header-height: @nav-pos-top + @nav-height;
+
+body {
+	background-color: @bg;
+    padding-bottom: 40px;
+}
+
+body > header {
+	background-color: @header-bg-left;
+	.gradient-left-right(@header-bg-left, @header-bg-right);
+	box-shadow: 1px 3px 10px @shadow;
+	min-height: @header-height;
+	max-height: @header-height;
+	margin-bottom: 25px;
+	
+	a {
+		float: left;
+	}
+		
+	img {
+		margin: 5px 0 5px 15px;
+	}
+	
+	h1 {
+		color: @bg;
+		font-family: Verdana, Tahoma, Geneva, sans-serif;
+		font-weight: normal;
+		font-style: italic;
+		padding-top: 10px;
+		margin-left: 130px;
+		//text-transform: uppercase;
+		text-shadow: 1px 2px black;
+	}
+}
+
+body > nav {
+	.navigation-style(@height: @nav-height) {
+		background-color: @nav-bg-top;
+		.gradient-top-bottom(@nav-bg-top, @nav-bg-bottom);
+		min-height: @height;
+		max-height: @height;
+	}
+	
+	position: absolute;
+	top: @nav-pos-top;
+	width: 100%;
+
+	.expansion {
+		.navigation-style;
+		margin-left: 50%;
+		position: absolute;
+		width: 50%;
+		top: 0;
+		z-index: 100;
+	}
+	
+	.navbar {
+		.navigation-style;
+		position: relative;
+		z-index: 200;
+		margin-left: @nav-margin-left;
+		padding-left: @nav-padding-left;
+		border-top-left-radius: 15px;
+		border-bottom-left-radius: 15px;
+
+		> ul {
+			float: left;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+	
+			> li {
+				float: left;
+				.navigation-style(@nav-height);
+				width: @nav-item-width;
+				text-align: center;
+				
+				a {
+					display: block;
+					padding-top: 5px;
+					padding-bottom: 5px;
+					color: @nav-color;
+					&:hover {text-decoration: none;}
+				}
+
+				ul {
+					display: none;
+					list-style: none;
+					width: 200px;
+					margin: 0px;
+					background-color: @nice-background;
+					background-size: 25px;
+					background-repeat: repeat-y;
+					.gradient-left-right();
+					border-bottom-left-radius: 10px;
+					border-bottom-right-radius: 10px;
+					box-shadow: 5px 5px 15px @shadow;
+					
+					li {
+						margin-left: 25px;
+					
+						a {
+							display: block;
+							padding-left: 10px;
+							text-align: left;
+							
+							&:hover {
+								background-color: darken(@nice-background, 10%);
+							}
+						}
+
+						&:last-child {
+							a {
+								border-bottom-right-radius: 10px;
+							}
+						}
+					}
+				}
+
+				&:hover {
+					.gradient-top-bottom(@nav-bg-bottom, @nav-bg-top);
+					
+					ul {
+						display: block;
+					}
+				}
+			}
+		}
+
+		form {
+			float: left;
+			margin: 0px;
+			margin-left: 20px;
+			
+			input {
+				margin-top: 3px;
+				padding-top: 1px;
+				padding-bottom: 1px;
+			}
+		}
+	}
+	
+	&.scrolling {
+		position: fixed;
+		top: 0px;
+		opacity: 0;
+		
+		&:hover {
+			opacity: 1.0;
+		}
+	}
+}
+
+.main {
+	background-color: white;
+	border-radius: 20px;
+	box-shadow: 5px 5px 30px @shadow, -5px 5px 20px @shadow;
+	padding: 10px;
+
+	.menubox {
+		.gradient3-top-bottom();
+		background-color: @nice-background;
+		background-size: 100% 20px;
+		background-repeat: repeat-x;
+		border-radius: 10px;
+		box-shadow: -5px 5px 15px @shadow;
+		
+		margin-top: 10px;
+		margin-bottom: 15px;
+		margin-left: 10px;
+		padding-bottom: 10px;
+		
+		.header {
+			border-radius: 20px;
+			margin: 0px;
+			margin-bottom: 5px;
+			font-weight: bold;
+			text-align: center;
+			color: white;
+		}
+		
+		ul {
+			list-style: none;
+			margin: 0px;
+			
+			li {
+				margin: 0;
+				
+				a {
+					display: block;
+					padding-left: 7px;
+					padding-right: 7px;
+					padding-top: 2px;
+					padding-bottom: 2px;
+
+					&:hover {
+						text-decoration: none;
+						background-color: darken(@nice-background, 10%);
+					}
+				}
+			}
+		}
+	}
+	
+	#footer {
+		color: #888;
+		margin-top: 15px;
+		text-align: right;
+		
+		a, a:hover, a:active {
+			color: #888;
+		}
+	}
+}
+
+.sidebox {
+	.gradient3-left-right();
+	background-color: white;
+	background-size: 16px;
+	background-repeat: repeat-y;
+	border-radius: 20px;
+	box-shadow: 5px 5px 30px @shadow;
+	margin-bottom: 25px;
+	padding-left: 25px;
+	max-width: 210px;
+	float: left;
+	
+	h3 {
+		margin: 0px;
+		margin-bottom: 15px;
+		border-bottom: 1px @shadow solid;
+		max-width: 160px;
+		font-weight: normal;
+	}
+}

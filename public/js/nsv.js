@@ -1,5 +1,6 @@
 
 $(document).ready(function(){
+	/*
 	$(window).scroll(function() {
 		var y = $(window).scrollTop();
 		if (y > 75) {
@@ -8,5 +9,6 @@ $(document).ready(function(){
 			$("nav").removeClass("scrolling");
 		}
 	});
+	*/
 });
 

@@ -1,129 +1,40 @@
-@import "../../bootstrap-src/less/variables.less";
-@import "../mixins.less";
-
+/* NSV colors
 @bg: #FFF3CA;
 @shadow: #888;
-
 @header-bg-left: rgb(165,91,0) + #111;
 @header-bg-right: rgb(214,119,0);
+@nice-background: #EDE4D4;
 
+@nav-bg-bottom: #FFD22F;
+@nav-bg-top: #FFEC65;
+@nav-color: #686765;
+*/
+
+//http://colorschemedesigner.com/#0F31Tw0kIw0w0
+@links: #7C521F;
+@headings: inherit;
+
+@import "../../bootstrap-src/less/bootstrap.less";
+@import "../../bootstrap-src/less/responsive.less";
+
+@bg: lighten(#D29E5F, 30%);
+@shadow: #888;
+
+@header-bg-left: #D28B35;
+@header-bg-right: lighten(@header-bg-left, 5%);
+
+@gradient1: #D28B35;
+@gradient2: darken(@gradient1, 8%);
+
+@nice-background: lighten(#D29E5F, 30%);
 
 @nav-bg-bottom: #FFD22F;
 @nav-bg-top: #FFEC65;
 @nav-color: #686765;
 
-@nav-margin-left: 120px;
-@nav-padding-left: 20px;
-@nav-item-width: 93px;
-@nav-height: 30px;
-@nav-pos-top: 75px;
-@header-height: @nav-pos-top + @nav-height;
 
-body {
-	background-color: @bg;
-    padding-bottom: 40px;
-}
 
-body > header {
-	background-color: @header-bg-left;
-	.gradient-left-right(@header-bg-left, @header-bg-right);
-	box-shadow: 1px 3px 10px @shadow;
-	min-height: @header-height;
-	max-height: @header-height;
-	
-	img {
-		margin: 5px 0 5px 15px;
-	}
-	
-	h1 {
-		color: @bg;
-		font-family: Verdana, Tahoma, Geneva, sans-serif;
-		font-weight: normal;
-		font-style: italic;
-		padding-top: 10px;
-		text-transform: uppercase;
-		text-shadow: 2px 2px black;
-	}
-}
 
-.navigation-style(@height: @nav-height) {
-	background-color: @nav-bg-top;
-	.gradient-top-bottom(@nav-bg-top, @nav-bg-bottom);
-	min-height: @height;
-	max-height: @height;
-}
-
-body > nav {
-	position: absolute;
-	top: @nav-pos-top;
-	width: 100%;
-
-	.expansion {
-		.navigation-style;
-		margin-left: 50%;
-		position: absolute;
-		width: 100%;
-		top: 0;
-		z-index: 100;
-	}
-	
-	.navbar {
-		.navigation-style;
-		position: relative;
-		z-index: 200;
-		margin-left: @nav-margin-left;
-		padding-left: @nav-padding-left;
-		border-top-left-radius: 15px;
-		border-bottom-left-radius: 15px;
-
-		form {
-			float: right;
-			margin: 0px;
-			
-			input {
-				margin-top: 3px;
-				padding-top: 1px;
-				padding-bottom: 1px;
-			}
-		}
-
-		ul {
-			list-style: none;
-			margin: 0;
-			padding: 0;
-	
-			li {
-				float: left;
-				.navigation-style(@nav-height - 5px);
-				padding-top: 5px;
-				width: @nav-item-width;
-				text-align: center;
-				
-				a {
-					color: @nav-color;
-					margin-top: 5px;
-				}
-				
-				a:hover {
-					text-decoration: none;
-				}
-			}
-			
-			li:hover {
-				.gradient-top-bottom(@nav-bg-bottom, @nav-bg-top);
-			}
-		}
-	}
-}
-
-nav.scrolling {
-	position: fixed;
-	top: 0px;
-	opacity: 0.8;
-}
-
-nav:hover.scrolling {
-	opacity: 1.0;
-}
-
+@import "layout.less";
+@import "type.less";
 
